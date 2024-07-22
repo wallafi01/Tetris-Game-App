@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: wallafitetrisgameapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wallafitetrisgameapp
+  template:
+    metadata:
+      labels:
+        app: wallafitetrisgameapp 
+    spec:
+      containers:
+        - name: wallafitetrisgameapp 
+          image: mylabecr.azurecr.io/wallafitetrisgameapp
+          ports:
+          - containerPort: 80
